@@ -1,0 +1,1 @@
+# thethings.io-SDK-SmartEverything
