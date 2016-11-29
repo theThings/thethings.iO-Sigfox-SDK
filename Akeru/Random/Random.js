@@ -7,7 +7,7 @@ function rev(v) {
 }
 
 function negative(s) {
-  a = parseInt(s,16);
+  var a = parseInt(s,16);
     if (a >= 32767) {
       a = a - 65536;
     }
@@ -15,7 +15,7 @@ function negative(s) {
 }
 
 function parseF(s) {
-  a = ((s & 0x7FFFFF | 0x800000) * 1.0 / Math.pow(2,23) * Math.pow(2, ((s>>23 & 0xFF) - 127)));
+  var a = ((s & 0x7FFFFF | 0x800000) * 1.0 / Math.pow(2,23) * Math.pow(2, ((s>>23 & 0xFF) - 127)));
   return a;
 }
 
