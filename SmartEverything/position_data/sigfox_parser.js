@@ -1,5 +1,5 @@
 function negative(s) {
-    a = parseInt(s,16);
+    var a = parseInt(s,16);
     if (a >= 32767) {
         a = a - 65536;
     }
@@ -7,7 +7,7 @@ function negative(s) {
 }
 
 function parseGPSData(s) { // Use this function in order to patch the GPS data stored as floats in the code
-    a = ((s & 0x7FFFFF | 0x800000) * 1.0 / Math.pow(2,23) * Math.pow(2, ((s>>23 & 0xFF) - 127)));
+    var a = ((s & 0x7FFFFF | 0x800000) * 1.0 / Math.pow(2,23) * Math.pow(2, ((s>>23 & 0xFF) - 127)));
     if (s >= 2147483647) { //If >= (it's a negative latitude or longitude)
       a =-a;
     }
