@@ -66,11 +66,12 @@ void loop() {
     frame2.longitude = 41.411451;
   }
   
-  if (digitalRead(13) == HIGH) {
+  if (isButtonOnePressed()) {
+    SerialUSB.println("Pressed!");
     frame.buttonPressed = true;
     last = millis();
   }
-  if (millis() - last >= 60000*10 || frame.buttonPressed == true) {
+  if (frame.buttonPressed == true) {
     bool answer = sendSigfox(&frame, sizeof(data));
     /*SerialUSB.print("  X = ");
     SerialUSB.print(frame.x, DEC);
@@ -86,7 +87,6 @@ void loop() {
     SerialUSB.print(frame2.latitude, DEC);
     SerialUSB.print("Longitude ");
     SerialUSB.print(frame2.longitude, DEC);*/
-    last = millis();
     frame.buttonPressed = false;
   }
 }
