@@ -20,7 +20,7 @@ function stringToMac(string) {
   return rev(string).match(/.{1,2}/g).reverse().join(':');
 }
 
-let GOOGLE_API_KEY = 'AIzaSyAlBBOmgBEiWdIry_zOfwm6Zyx7zSjRr-k';
+let GOOGLE_API_KEY = 'YOUR GOOGLE API KEY';
 
 function main(params, callback){
   	var number = '';
